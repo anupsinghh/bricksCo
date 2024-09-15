@@ -1,0 +1,389 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between; /* Space items evenly */
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap; /* Wrap for smaller screens */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.navbar a:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+
+.navbar-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+
+/* Download Options Styles */
+.download-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+  display: none; /* Hidden by default */
+}
+
+.download-options.show {
+  display: block;
+}
+
+.download-options a {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.download-options a:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 20px;
+  text-align: center;
+}
+
+.dashboard-stats {
+  display: flex;
+  flex-wrap: wrap; /* Wrap for smaller screens */
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 22%; /* Adjusted for responsiveness */
+  margin-bottom: 20px; /* Space between items */
+}
+
+.stat h2 {
+  font-size: 1.2em; /* Title size */
+}
+
+.stat p {
+  font-size: 2em; /* Increased size for numbers */
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Button Styles */
+.download-button {
+  background-color: #4CAF50; /* Green background */
+  border: none;
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Add Data Section Styles */
+.add-data,
+.view-data {
+  padding: 20px 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+.entries-section {
+  margin-bottom: 30px;
+}
+
+.entries-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.entry-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.entry-row input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.add-button,
+.submit-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+  transition: background-color 0.3s;
+}
+
+/* Data Table Styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f4f4f4;
+  font-size: 1em;
+  color: #333;
+}
+
+.data-table td {
+  font-size: 1em;
+  color: #555;
+}
+
+.data-table td input[type="text"], 
+.data-table td input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Download Section Styles */
+.download {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download h1 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.download button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.download button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+
+.download button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .stat {
+    width: 30%;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar a {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .download-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .stat {
+    width: 45%;
+  }
+
+  .dashboard-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar a {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+
+  .stat {
+    width: 90%;
+  }
+
+  .download-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .stat p {
+    font-size: 1.5em;
+  }
+}
+
+/* Login Page Styles */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-page h1 {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.login-page form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-page label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #333;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.login-page button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.login-page button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
