@@ -132,7 +132,8 @@ body {
 .view-data {
   padding: 20px 0;
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
+  padding-left: 20px; /* Center horizontally */
 }
 
 .entries-section {
@@ -369,21 +370,17 @@ body {
   background-color: #007bff;
   border: none;
   color: white;
-  padding: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
   font-size: 1em;
-  margin-top: 15px;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
 }
 
 .login-page button:hover {
   background-color: #0056b3;
-}
-
-.error-message {
-  color: red;
-  margin-bottom: 15px;
-  font-size: 0.9em;
+  transition: background-color 0.3s;
 }
