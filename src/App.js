@@ -9,6 +9,9 @@ import DownloadButton from './components/DownloadButton';
 import LoginPage from './components/LoginPage';
 import useAuth from './hooks/useAuth';
 import './styles.css';
+import SalesStatement from './components/Pages/SalesStatement'; 
+import Pathera from './components/Pages/Pathera';
+import RackManagement from './components/Pages/RackManagement';
 
 const AppContent = () => {
   const { isAuthenticated, login, logout } = useAuth();
@@ -21,6 +24,11 @@ const AppContent = () => {
         <Route path="/" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
         <Route path="/add" element={isAuthenticated ? <AddData /> : <Navigate to="/login" />} />
         <Route path="/view" element={isAuthenticated ? <ViewData /> : <Navigate to="/login" />} />
+        <Route path="/sales-statement" element={isAuthenticated ? <SalesStatement /> : <Navigate to="/login" />} />
+        <Route path="/pathera" element={isAuthenticated ? <Pathera /> : <Navigate to="/login" />} />
+        <Route path="/earthin-stock" element={isAuthenticated ? <RackManagement /> : <Navigate to="/login" />} />
+
+
       </Routes>
       {/* {isAuthenticated && <DownloadButton />} */}
     </>

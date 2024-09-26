@@ -1,0 +1,144 @@
+/* dashboard.css */
+
+/* Overall container styling for the dashboard */
+.dashboard {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the dashboard horizontally */
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  /* Dashboard heading */
+  .dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  /* Statistics container styling */
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+    gap: 20px; /* Space between stats */
+    margin-bottom: 20px;
+  }
+  
+  /* Individual stat box styling */
+  .stat {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .stat h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555;
+    
+  }
+  
+  .stat p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Grid for the section links */
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  /* Individual section styling */
+  .section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .section i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Button container styling */
+  .button-container {
+    margin-top: 40px;
+  }
+  
+  /* Download button styling */
+  .download-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* On small screens, we ensure 4 columns by reducing padding and adjusting layout */
+  @media (max-width: 992px) {
+    .stat, .section {
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .dashboard-stats, .sections-grid {
+      grid-template-columns: repeat(4, 1fr); /* Maintain 4 columns even on smaller screens */
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stat, .section {
+      padding: 8px; /* Further reduce padding for smaller screens */
+    }
+  
+    .dashboard-stats, .sections-grid {
+      grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+      gap: 8px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .stat, .section {
+      padding: 5px; /* Minimal padding for very small screens */
+    }
+  
+    .dashboard-stats, .sections-grid {
+      grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
+      gap: 5px;
+    }
+  }
+  

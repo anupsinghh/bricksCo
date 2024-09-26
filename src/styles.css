@@ -1,9 +1,10 @@
 /* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
+html, body {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 /* Navbar Styles */
@@ -11,12 +12,14 @@ body {
   background-color: #007bff;
   color: white;
   padding: 15px 30px;
+  max-width: 100%;
   display: flex;
-  justify-content: space-between; /* Space items evenly */
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  flex-wrap: wrap; /* Wrap for smaller screens */
+  flex-wrap: wrap;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -29,20 +32,32 @@ body {
 
 .navbar a:hover {
   background-color: #0056b3;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.navbar-button {
-  background: none;
+/* Navbar Toggle Button (for mobile) */
+.navbar-toggle {
+  display: none;
+  background-color: transparent;
   border: none;
+  font-size: 1.5em;
   color: white;
-  cursor: pointer;
-  font-size: 1em;
 }
 
-.navbar-button:hover {
-  background-color: #0056b3;
-  transition: background-color 0.3s;
+@media (max-width: 768px) {
+  .navbar a {
+    display: none; /* Hide navbar links on small screens */
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar.active a {
+    display: block;
+    padding: 10px;
+  }
 }
 
 /* Download Options Styles */
@@ -57,7 +72,7 @@ body {
   padding: 1rem;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
   z-index: 10;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 .download-options.show {
@@ -83,7 +98,7 @@ body {
 
 .dashboard-stats {
   display: flex;
-  flex-wrap: wrap; /* Wrap for smaller screens */
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 20px;
 }
@@ -93,38 +108,50 @@ body {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 22%; /* Adjusted for responsiveness */
-  margin-bottom: 20px; /* Space between items */
+  width: 22%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.stat:hover {
+  transform: scale(1.05);
 }
 
 .stat h2 {
-  font-size: 1.2em; /* Title size */
+  font-size: 1.2em;
 }
 
 .stat p {
-  font-size: 2em; /* Increased size for numbers */
+  font-size: 2em;
   font-weight: bold;
   margin: 0;
 }
 
+/* Responsive Dashboard Stats */
+@media (max-width: 768px) {
+  .stat {
+    width: 100%;
+  }
+}
+
 /* Button Styles */
 .download-button {
-  background-color: #4CAF50; /* Green background */
+  background-color: #4CAF50;
   border: none;
-  color: white; /* White text */
-  padding: 30px 50px; /* Padding */
+  color: white;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 25px;
-  margin: 0px 0;
+  font-size: 16px;
+  margin: 20px 0;
   cursor: pointer;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
 
 /* Add Data Section Styles */
@@ -133,7 +160,7 @@ body {
   padding: 20px 0;
   max-width: 800px;
   margin: 0 auto;
-  padding-left: 20px; /* Center horizontally */
+  padding-left: 20px;
 }
 
 .entries-section {
@@ -164,7 +191,7 @@ body {
 .add-button,
 .submit-button {
   margin-top: 10px;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 10px;
   font-size: 1em;
@@ -178,7 +205,6 @@ body {
 
 .add-button:hover {
   background-color: #0056b3;
-  transition: background-color 0.3s;
 }
 
 .submit-button {
@@ -188,7 +214,6 @@ body {
 
 .submit-button:hover {
   background-color: #218838;
-  transition: background-color 0.3s;
 }
 
 /* Data Table Styles */
@@ -250,7 +275,6 @@ body {
 
 .download button:hover {
   background-color: #0056b3;
-  transition: background-color 0.3s;
 }
 
 .download button:disabled {
@@ -259,16 +283,6 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
-  .navbar {
-    padding: 15px;
-  }
-
-  .stat {
-    width: 30%;
-  }
-}
-
 @media (max-width: 992px) {
   .navbar a {
     padding: 8px 16px;
@@ -307,22 +321,6 @@ body {
   .download-button {
     padding: 10px 20px;
     font-size: 12px;
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .download-button {
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-
-  .stat p {
-    font-size: 1.5em;
   }
 }
 
@@ -383,5 +381,50 @@ body {
 
 .login-page button:hover {
   background-color: #0056b3;
-  transition: background-color 0.3s;
+}
+
+/* Flexbox container for clickable sections */
+.container-boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Box styles for 4 in a row on large screens */
+.box {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 22%; /* Adjust width to fit 4 boxes in a row with space */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1200px) {
+  .box {
+    width: 30%; /* 3 boxes per row for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .box {
+    width: 45%; /* 2 boxes per row for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 100%; /* 1 box per row for mobile screens */
+  }
 }

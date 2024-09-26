@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { collection, query, onSnapshot } from 'firebase/firestore';
-import { db } from '../firebase-config'; // Adjust the path to your Firebase config file
-import { downloadData } from '../utils/downloadData'; // Import downloadData function
-import '../styles.css'; // Import styles
+import { useNavigate } from 'react-router-dom';
+import { db } from '../firebase-config';
+import { downloadData } from '../utils/downloadData';
+import './dashboard.css'; // Ensure styles are correctly imported
 
 const Dashboard = () => {
   const [data, setData] = useState({
@@ -12,12 +13,12 @@ const Dashboard = () => {
     revenue: 0,
   });
 
+  const navigate = useNavigate(); // For navigation
+
   useEffect(() => {
     const fetchData = () => {
-      // Query the 'data' collection
       const dataQuery = query(collection(db, 'data'));
 
-      // Handle data collection
       const unsubscribe = onSnapshot(dataQuery, (snapshot) => {
         let totalBricks = 0;
         let soldBricks = 0;
@@ -25,48 +26,41 @@ const Dashboard = () => {
 
         snapshot.forEach((doc) => {
           const docData = doc.data();
-          console.log('Doc Data:', docData);
 
-          // Process labourEntries (if needed)
           if (Array.isArray(docData.labourEntries)) {
-            docData.labourEntries.forEach(entry => {
+            docData.labourEntries.forEach((entry) => {
               const amount = Number(entry.amount) || 0;
               totalBricks += amount;
             });
-          } else {
-            console.warn('No labourEntries found in document:', doc.id);
           }
 
-          // Process salesEntries
           if (Array.isArray(docData.salesEntries)) {
-            docData.salesEntries.forEach(entry => {
+            docData.salesEntries.forEach((entry) => {
               const quantity = Number(entry.quantity) || 0;
               const amount = Number(entry.amount) || 0;
               soldBricks += quantity;
               revenue += amount;
             });
-          } else {
-            console.warn('No salesEntries found in document:', doc.id);
           }
         });
 
-        setData(prevData => ({
-          ...prevData,
+        setData({
           totalBricks,
           soldBricks,
           revenue,
           remainingBricks: totalBricks - soldBricks,
-        }));
+        });
       });
 
-      // Cleanup on unmount
-      return () => {
-        unsubscribe();
-      };
+      return () => unsubscribe();
     };
 
     fetchData();
   }, []);
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className="dashboard">
@@ -89,6 +83,31 @@ const Dashboard = () => {
           <p>₹{data.revenue.toFixed(2)}</p>
         </div>
       </div>
+
+      <div className="sections-grid">
+        {[
+          { name: 'Sales Statement', icon: 'fas fa-file-invoice', path: '/sales-statement' },
+          { name: 'Pathera', icon: 'fas fa-box', path: '/pathera' },
+          { name: 'Bojhwa', icon: 'fas fa-truck', path: '/bojhwa' },
+          { name: 'Nikasi', icon: 'fas fa-check-circle', path: '/nikasi' },
+          { name: 'Earthin Stock', icon: 'fas fa-globe', path: '/earthin-stock' },
+          { name: 'Daily Expenses', icon: 'fas fa-coins', path: '/daily-expenses' },
+          { name: 'Labour', icon: 'fas fa-users', path: '/labour' },
+          { name: 'Munshi', icon: 'fas fa-user-tie', path: '/munshi' },
+          { name: 'Other Section', icon: 'fas fa-cog', path: '/other-section' },
+        ].map((section) => (
+          <div
+            className="section"
+            key={section.name}
+            onClick={() => navigateTo(section.path)}
+          >
+            <i className={section.icon}></i>
+            <p>{section.name}</p>
+          </div>
+          
+        ))}
+      </div>
+
       <div className="button-container">
         <button className="download-button" onClick={downloadData}>
           Download Data
