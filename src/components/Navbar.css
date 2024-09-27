@@ -1,5 +1,4 @@
 /* General navbar styles */
-/* General navbar styles */
 .navbar {
     background-color: #333;
     padding: 10px;
@@ -8,58 +7,62 @@
     align-items: center;
     width: 100%;  /* Ensure the navbar takes full width */
     box-sizing: border-box;  /* Include padding in the width */
-    position: fixed; /* Optional: Fix navbar at the top */
+    position: fixed; /* Fix navbar at the top */
     top: 0; /* Ensures the navbar stays at the top when using position: fixed */
     z-index: 1000; /* Keeps navbar above other content */
-  }
-  
-  /* Reset margin and padding for the body to avoid unwanted space */
-  body, html {
+    height: 60px; /* Set a fixed height for consistency */
+}
+
+/* Reset margin and padding for the body to avoid unwanted space */
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Ensures all elements follow the border-box sizing */
-  }
-  
-  
-  .navbar-container {
+    padding-top: 60px; /* Adjust the padding to the fixed height of the navbar */
+}
+
+/* General styling for the navbar container */
+.navbar-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .navbar-logo {
+}
+
+/* Navbar links and buttons */
+.navbar-logo {
     color: white;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-  }
-  
-  /* Right-side links (Dashboard & Logout) */
-  .right-links {
+}
+
+.right-links {
     display: flex;
     align-items: center;
-  }
-  
-  /* Menu icon for mobile view */
-  .menu-icon {
+}
+
+/* Mobile menu icon */
+.menu-icon {
     display: none;
     font-size: 24px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-  }
-  
-  .nav-links {
+}
+
+/* Links in the navbar */
+.nav-links {
     display: flex;
     align-items: center;
     gap: 15px;
-  }
-  
-  .navbar-button {
+}
+
+/* Navbar button */
+.navbar-button {
     background-color: #ff4d4d;
     color: white;
     padding: 8px 15px;
@@ -67,70 +70,69 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .navbar-button:hover {
+}
+
+.navbar-button:hover {
     background-color: #ff1a1a;
-  }
-  
-  /* Align links to the right side for larger screens */
-  @media (min-width: 769px) {
+}
+
+/* Align links to the right side for larger screens */
+@media (min-width: 769px) {
     .right-links {
-      margin-left: auto;
+        margin-left: auto;
     }
-  
+
     .nav-links {
-      display: flex;
+        display: flex;
     }
-  }
-  
-  /* Responsive design for small screens */
-  @media (max-width: 768px) {
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
     .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Adjust to the height of the navbar */
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
-  
+
     .nav-links.open {
-      display: flex;
+        display: flex;
     }
-  
+
     .menu-icon {
-      display: block;
+        display: block;
     }
-  
+
     .navbar-button {
-      margin: 10px 0;
+        margin: 10px 0;
     }
-  
+
     .nav-links a {
-      color: white;
-      padding: 10px 0;
-      text-decoration: none;
-      width: 100%;
+        color: white;
+        padding: 10px 0;
+        text-decoration: none;
+        width: 100%;
     }
-  
+
     .nav-links a:hover {
-      background-color: #555;
+        background-color: #555;
     }
-  }
-  
-  /* For very small devices */
-  @media (max-width: 480px) {
+}
+
+/* For very small devices */
+@media (max-width: 480px) {
     .navbar-logo {
-      font-size: 20px;
+        font-size: 20px;
     }
-  
+
     .navbar-button {
-      font-size: 14px;
-      padding: 6px 12px;
+        font-size: 14px;
+        padding: 6px 12px;
     }
-  }
-  
+}

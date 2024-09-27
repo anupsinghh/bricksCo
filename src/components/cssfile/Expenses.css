@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .expense-tracker {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .expense-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table Styles */
+  .expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .expense-table th, .expense-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .expense-table th {
+    background-color: #f4f4f4;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .expense-tracker {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-group {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .submit-button {
+      width: 100%;
+    }
+  
+    .expense-table th, .expense-table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  
+  /* For Mobile Screens (Below 480px) */
+  @media (max-width: 480px) {
+    h1, h2 {
+      font-size: 1.5rem;
+    }
+  
+    .form-group input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+    }
+  
+    .expense-table th, .expense-table td {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
+  

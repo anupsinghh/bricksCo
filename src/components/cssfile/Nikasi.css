@@ -1,0 +1,147 @@
+
+.nikasi-management {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #555; /* Color for the subheading */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.add-button, .submit-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 150px; /* Set a standard width for buttons */
+    margin: 5px ; /* Add vertical margin for spacing */
+}
+.close-button {
+    padding: 10px;
+    background-color: #fd2121;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 150px; /* Set a standard width for buttons */
+    margin: 5px ; /* Add vertical margin for spacing */
+}
+.add-button:hover, .submit-button:hover {
+    background-color: #45a049;
+}
+.close-button:hover {
+    background-color: #ff0000;
+}
+
+.nikasi-buttons {
+    display: flex; /* Change back to flex for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+    max-width: 600px;
+}
+
+.nikasi-button-container {
+    display: flex; /* Use flex for horizontal layout */
+    justify-content: space-between; /* Space between name and balance */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* White background for clarity */
+    margin-bottom: 10px; /* Space between each nikasi */
+}
+
+.nikasi-button-container.heading {
+    font-weight: bold; /* Make headings bold */
+    background-color: #e0e0e0; /* Light background for headings */
+}
+
+.nikasi-name {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    color: #333;
+}
+
+.nikasi-balance {
+    font-size: 1rem;
+    color: #333;
+    text-align: right; /* Align text to the right */
+}
+
+.transaction-window {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.transaction-window h3 {
+    margin-top: 0;
+}
+
+.transaction-window label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.transaction-window input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.transaction-window ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-window li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-window p {
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .add-button, .submit-button, .close-button {
+        font-size: 0.9rem;
+        width: 100%; /* Make buttons full width on small screens */
+    }
+}
